@@ -436,6 +436,14 @@ function ProcessNetworkMessage(Message)
 		C4:UpdateProperty("Device Package Name",	WireMessage[1][2][5].Value)
 		C4:UpdateProperty("Device App Version",		WireMessage[1][2][6].Value)
 		SendDriverDescriptorPayload()
+	elseif(FingerPrint == "[F1][F1][WT0][F2][F1][WT2][F2][WT2][F3][WT0][F4][WT2][F5][WT2][F6][WT2][F3][WT0]") then
+		Debug("DEVICE DESCRIPTOR")
+		C4:UpdateProperty("Model Name",						WireMessage[1][2][1].Value)
+		C4:UpdateProperty("Vendor Name",					WireMessage[1][2][2].Value)
+		C4:UpdateProperty("Device Version",				WireMessage[1][2][4].Value)
+		C4:UpdateProperty("Device Package Name",	WireMessage[1][2][5].Value)
+		C4:UpdateProperty("Device App Version",		WireMessage[1][2][6].Value)
+		SendDriverDescriptorPayload()
 	elseif(FingerPrint == "[F50][F1][WT0][F2][WT0][F3][WT2][F4][WT0]") then
 		Debug("PLAYER NAME & VOLUME LEVEL")
 		
